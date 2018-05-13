@@ -66,6 +66,7 @@ namespace Homework01
                 }
             }
 
+            if (sexUtilizator != null && varsta < 140) {
 
             if (varsta > 63 && sexUtilizator.Value == (int?)Sex.Feminin)
             {
@@ -86,6 +87,10 @@ namespace Homework01
             else if (varsta > 0 && varsta < 65 && sexUtilizator.Value == (int?)Sex.Masculin)
             {
                 Console.WriteLine($"Ai {65 - varsta} ani pana la pensie");
+            }
+
+            } else {
+                Console.WriteLine("Date introduse incorect.");
             }
 
             Console.WriteLine("Apasa o tasta pentru iesire");
