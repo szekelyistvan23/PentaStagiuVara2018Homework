@@ -66,14 +66,14 @@ namespace Homework01
                 }
             }
 
-            if (sexUtilizator != null && varsta < 140) {
+            if (sexUtilizator != null && varsta > 0 && varsta < 120) {
 
             if (varsta > 63 && sexUtilizator.Value == (int?)Sex.Feminin)
             {
                 Console.WriteLine("Esti deja pensionara");
 
             }
-            else if (varsta > 0 && varsta < 63 && sexUtilizator.Value == (int?)Sex.Feminin)
+            else if (varsta < 63 && sexUtilizator.Value == (int?)Sex.Feminin)
             {
                 Console.WriteLine($"Ai {63 - varsta} ani pana la pensie");
             }
@@ -84,7 +84,7 @@ namespace Homework01
                 Console.WriteLine("Esti deja pensionar");
 
             }
-            else if (varsta > 0 && varsta < 65 && sexUtilizator.Value == (int?)Sex.Masculin)
+            else if (varsta < 65 && sexUtilizator.Value == (int?)Sex.Masculin)
             {
                 Console.WriteLine($"Ai {65 - varsta} ani pana la pensie");
             }
