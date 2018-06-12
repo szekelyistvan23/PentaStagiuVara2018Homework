@@ -5,11 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace CommonBoardLibrary
-{
+{   
     public class Board
     {
         int length;
         Post[] posts;
+        public event EventHandler MessageAdded;
 
         public Board(int length)
         {
@@ -29,6 +30,15 @@ namespace CommonBoardLibrary
         { if (index < length - 1)
             {
                 posts[index] = (new Post(index, DateTime.Now, message, user));
+                OnMessageAdded(EventArgs.Empty);
+            }
+        }
+
+        public void OnMessageAdded(EventArgs e)
+        {
+            if (MessageAdded != null)
+            {
+                MessageAdded(this, e);
             }
         }
 

@@ -18,10 +18,13 @@ namespace CommonBoardConsoleApp
         static int count = 0;
         static void Main(string[] args)
         {
+
             localBoard = new Board(index);
             // Right now you can't register as a user from the console, because data isn't saved to disk
             george = new Account("George", "Breaza07", "george@gmail.com", DateTime.Now, "George", "Bularca", new DateTime(1985,3,14));
-            
+
+            localBoard.MessageAdded += LocalBoard_MessageAdded;
+
             while (true)
             {
                 DisplayChoices();
@@ -52,6 +55,11 @@ namespace CommonBoardConsoleApp
 
                 Console.WriteLine();
             }
+        }
+
+        private static void LocalBoard_MessageAdded(object sender, EventArgs e)
+        {
+            Console.WriteLine("New message added!");
         }
 
         private static void DisplayChoices()
