@@ -28,10 +28,10 @@ namespace Files
                 string line;
                 while ((line = streamReader.ReadLine()) != null)
                 {
-                    if (!line.Trim().Equals(""))
+                    if (IsValidName(line))
                     {
                         array.Add(line);
-                    }
+                    } 
                 }
             }
             people = array;
@@ -48,7 +48,7 @@ namespace Files
 
         private static bool IsValidName(string name)
         {
-            if (!Regex.IsMatch(name, @"^[\p{L}\p{M}]+$"))
+            if (!Regex.IsMatch(name, @"^[\p{L}\p{M}]+$") || name.Trim().Equals(""))
             {
                 Console.WriteLine("Invalid name: {0}", name);
                 return false;
@@ -58,14 +58,11 @@ namespace Files
 
         private static void AddName()
         {
-            string[] newPeople = { "Andre3000", "Michael" };
+            string[] newPeople = { "Tina", "Michael" };
 
             foreach (string name in newPeople)
             {
-                if (IsValidName(name))
-                {
-                    people.Add(name);
-                }
+                people.Add(name);
             }
         }
 
