@@ -23,7 +23,7 @@ namespace Files
         private static void LoadFilePeople()
         {
             List<string> array = new List<string>();
-            using (StreamReader streamReader = new StreamReader("people.txt"))
+            using (StreamReader streamReader = new StreamReader("../../people.txt"))
             {
                 string line;
                 while ((line = streamReader.ReadLine()) != null)
@@ -83,13 +83,14 @@ namespace Files
 
         private static void SaveToNewFile()
         {
+            string file = "../../newpeople.txt";
             try
             {
-                WriteToFile("newpeople.txt", FileMode.Open, FileAccess.Write);
+                WriteToFile(file, FileMode.Open, FileAccess.Write);
             }
             catch (FileNotFoundException)
             {
-                WriteToFile("newpeople.txt", FileMode.OpenOrCreate, FileAccess.Write);
+                WriteToFile(file, FileMode.OpenOrCreate, FileAccess.Write);
             }
         }
     }
