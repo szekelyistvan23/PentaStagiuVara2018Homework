@@ -1,8 +1,11 @@
-﻿using System;
+﻿using Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+using static Repository.JsonHelper;
 
 namespace Homework02
 {
@@ -10,6 +13,24 @@ namespace Homework02
     {
         static void Main(string[] args)
         {
+            var persons = ExtractJson();
+
+            var result = persons
+                .Select( p => new User()
+                {
+                    Username = $"{p.FirstName}{p.LastName}{p.BirthDate.ToString("yy")}",
+                    FirstName = p.FirstName,
+                    LastName = p.LastName,
+                    Gender = p.Gender,
+                    BirthDate = p.BirthDate
+                })
+                .ToList();
+
+            foreach (User name in result)
+            {
+                Console.WriteLine(name);
+            }
+            Console.ReadKey();
         }
     }
 }
