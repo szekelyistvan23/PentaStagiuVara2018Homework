@@ -26,9 +26,9 @@ namespace Homework02
                 })
                 .ToList();
 
-            foreach (User name in result)
+            foreach (User user in result)
             {
-                Console.WriteLine(name);
+                Console.WriteLine(user);
             }
             Console.ReadKey();
         }
