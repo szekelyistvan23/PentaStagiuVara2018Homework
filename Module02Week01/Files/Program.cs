@@ -31,7 +31,10 @@ namespace Files
                     if (IsValidName(line))
                     {
                         array.Add(line);
-                    } 
+                    } else
+                    {
+                        Console.WriteLine("Invalid name: {0}", line);
+                    }
                 }
             }
             people = array;
@@ -50,7 +53,6 @@ namespace Files
         {
             if (!Regex.IsMatch(name, @"^[\p{L}\p{M}]+$") || name.Trim().Equals(""))
             {
-                Console.WriteLine("Invalid name: {0}", name);
                 return false;
             }
             return true;
@@ -68,17 +70,20 @@ namespace Files
 
         private static void WriteToFile(string fileName, FileMode fileMode, FileAccess fileAcces)
         {
-            FileStream fileStream = new FileStream(fileName, fileMode, fileAcces);
-            foreach (string name in people)
+            using (FileStream fileStream = new FileStream(fileName, fileMode, fileAcces))
             {
-                string newName = name + "\n";
-                byte[] array = Encoding.ASCII.GetBytes(newName);
-                foreach (byte toWrite in array)
+
+                foreach (string name in people)
                 {
-                    fileStream.WriteByte(toWrite);
+                    string newName = name + "\n";
+                    byte[] array = Encoding.ASCII.GetBytes(newName);
+                    foreach (byte toWrite in array)
+                    {
+                        fileStream.WriteByte(toWrite);
+                    }
                 }
+                fileStream.Close();
             }
-            fileStream.Close();
         }
 
         private static void SaveToNewFile()
