@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Repository;
 
+using static Repository.JsonHelper;
+
 namespace Homework01
 {
     class Program
@@ -11,7 +13,7 @@ namespace Homework01
         {
             var persons = ExtractJson();
 
-            var startDate = new DateTime(1985,1,1,0,0,0);
+            var startDate = new DateTime(1985, 1, 1, 0, 0, 0);
             var endDate = new DateTime(1995, 12, 31, 23, 59, 59);
 
             var result = persons
@@ -28,13 +30,6 @@ namespace Homework01
                 Console.WriteLine(name);
             }
             Console.ReadKey();
-        }
-
-        private static IList<Person> ExtractJson()
-        {
-            var repo = new BlogRepository("../../abc.json");
-            var persons = repo.GetAllPersons();
-            return persons;
         }
     }
 }

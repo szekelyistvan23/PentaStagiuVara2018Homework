@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Json;
 using System.Text;
@@ -27,6 +28,13 @@ namespace Repository
                 var serializer = new DataContractJsonSerializer(typeof(T));
                 return (T)serializer.ReadObject(ms);
             }
+        }
+
+        public static IList<Person> ExtractJson()
+        {
+            var repo = new BlogRepository("../../abc.json");
+            var persons = repo.GetAllPersons();
+            return persons;
         }
     }
 }
