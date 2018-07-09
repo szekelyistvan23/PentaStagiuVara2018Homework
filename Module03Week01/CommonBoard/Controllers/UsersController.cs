@@ -44,5 +44,24 @@ namespace CommonBoard.Controllers
             users.Add(user);
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        public ActionResult Delete(int? id)
+        {
+            User user = users.Find(u => u.Id == id);
+            if (user == null)
+            {
+                return HttpNotFound();
+            }
+            return View(user);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            User user = users.Find(u => u.Id == id);
+            users.Remove(user);
+            return RedirectToAction("Index");
+        }
     }
 }
