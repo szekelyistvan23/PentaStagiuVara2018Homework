@@ -84,13 +84,7 @@ namespace CommonBoard.Controllers
             List<Post> result = new List<Post>();
             foreach (Post p in posts)
             {
-                if (!p.Equals(findPost))
-                {
-                    result.Add(p);
-                } else
-                {
-                    result.Add(post);
-                }
+             if (!p.Equals(findPost)) result.Add(p); else result.Add(post);
             }
             posts = result;
             return RedirectToAction("Index");

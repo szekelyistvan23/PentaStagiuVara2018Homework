@@ -83,14 +83,7 @@ namespace CommonBoard.Controllers
             List<User> result = new List<User>();
             foreach (User u in users)
             {
-                if (!u.Equals(findUser))
-                {
-                    result.Add(u);
-                }
-                else
-                {
-                    result.Add(user);
-                }
+             if (!u.Equals(findUser)) result.Add(u); else result.Add(user);
             }
             users = result;
             return RedirectToAction("Index");
