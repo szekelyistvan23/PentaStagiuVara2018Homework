@@ -44,5 +44,23 @@ namespace CommonBoard.Controllers
             Post post = posts.Find(p => p.Id == lastPost);
             return View(post);
         }
+
+        public ActionResult Delete(int? id)
+        {
+            Post post = posts.Find(p => p.Id == id);
+            if (post == null)
+            {
+                return HttpNotFound();
+            }
+            return View(post);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Post post = posts.Find(p => p.Id == id);
+            posts.Remove(post);
+            return RedirectToAction("Index");
+        }
     }
 }
