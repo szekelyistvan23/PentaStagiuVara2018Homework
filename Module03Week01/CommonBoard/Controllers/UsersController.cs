@@ -63,5 +63,37 @@ namespace CommonBoard.Controllers
             users.Remove(user);
             return RedirectToAction("Index");
         }
+
+        [HttpGet]
+        public ActionResult Edit(int? id)
+        {
+            User user = users.Find(u => u.Id == id);
+            if (user == null)
+            {
+                return HttpNotFound();
+            }
+            return View(user);
+        }
+
+
+        [HttpPost]
+        public ActionResult Edit(User user)
+        {
+            User findUser = users.Find(u => u.Id == user.Id);
+            List<User> result = new List<User>();
+            foreach (User u in users)
+            {
+                if (!u.Equals(findUser))
+                {
+                    result.Add(u);
+                }
+                else
+                {
+                    result.Add(user);
+                }
+            }
+            users = result;
+            return RedirectToAction("Index");
+        }
     }
 }
