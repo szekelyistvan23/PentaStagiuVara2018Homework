@@ -31,13 +31,10 @@ namespace CommonBoard.Controllers
             {
                 return HttpNotFound();
             }
-            else
-            {
                 Id++;
                 post.Id = Id;
                 posts.Add(post);
                 return RedirectToAction("Details");
-            }
         }
 
         [HttpGet]
