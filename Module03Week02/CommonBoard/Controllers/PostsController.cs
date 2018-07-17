@@ -15,6 +15,7 @@ namespace CommonBoard.Controllers
         // GET: Posts
         public ActionResult Index()
         {
+            ViewBag.CurrentDateTime = DateTime.Now;
             return View(posts);
         }
 
@@ -46,20 +47,13 @@ namespace CommonBoard.Controllers
         }
 
         [HttpGet]
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(int id)
         {
             Post post = posts.Find(p => p.Id == id);
             if (post == null)
             {
                 return HttpNotFound();
             }
-            return View(post);
-        }
-
-        [HttpPost, ActionName("Delete")]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            Post post = posts.Find(p => p.Id == id);
             posts.Remove(post);
             return RedirectToAction("Index");
         }
