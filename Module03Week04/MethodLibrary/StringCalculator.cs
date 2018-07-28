@@ -66,8 +66,10 @@ namespace MethodLibrary
         private static int CheckForNegativeNumbers(string[] values)
         {
             int result;
-            int[] numbersArray = values.Select(x => int.Parse(x)).ToArray();
-            int[] negativeNumbers = numbersArray.Where(x => x < 0).ToArray();
+            int[] negativeNumbers = values
+                .Select(x => int.Parse(x))
+                .Where(x => x < 0)
+                .ToArray();
 
 
             if (negativeNumbers.Count() > 0)
