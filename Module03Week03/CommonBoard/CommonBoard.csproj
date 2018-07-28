@@ -211,6 +211,14 @@
     <Compile Include="Migrations\201807241749474_UserIdToString.Designer.cs">
       <DependentUpon>201807241749474_UserIdToString.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201807250604041_Link between Post and ApplicationUser.cs" />
+    <Compile Include="Migrations\201807250604041_Link between Post and ApplicationUser.Designer.cs">
+      <DependentUpon>201807250604041_Link between Post and ApplicationUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201807250612014_Last modification deleted.cs" />
+    <Compile Include="Migrations\201807250612014_Last modification deleted.Designer.cs">
+      <DependentUpon>201807250612014_Last modification deleted.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Category.cs" />
@@ -312,6 +320,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201807241749474_UserIdToString.resx">
       <DependentUpon>201807241749474_UserIdToString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807250604041_Link between Post and ApplicationUser.resx">
+      <DependentUpon>201807250604041_Link between Post and ApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201807250612014_Last modification deleted.resx">
+      <DependentUpon>201807250612014_Last modification deleted.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
