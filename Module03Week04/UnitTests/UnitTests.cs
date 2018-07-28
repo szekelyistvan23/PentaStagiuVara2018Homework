@@ -20,7 +20,7 @@ namespace UnitTests
             {
                 _testResult = MethodLibrary.StringCalculator.Add("");
 
-                Assert.AreEqual(_testResult, 0);
+                Assert.AreEqual(0, _testResult);
             }
 
             [TestCase]
@@ -28,7 +28,7 @@ namespace UnitTests
             {
                 _testResult = MethodLibrary.StringCalculator.Add("1");
 
-                Assert.AreEqual(_testResult, 1);
+                Assert.AreEqual(1, _testResult);
             }
 
             [TestCase]
@@ -36,7 +36,7 @@ namespace UnitTests
             {
                 _testResult = MethodLibrary.StringCalculator.Add("1,2");
 
-                Assert.AreEqual(_testResult, 3);
+                Assert.AreEqual(3, _testResult);
             }
 
             [TestCase]
@@ -44,7 +44,7 @@ namespace UnitTests
             {
                 _testResult = MethodLibrary.StringCalculator.Add("1,2,2,10,3,6,5");
 
-                Assert.AreEqual(_testResult, 29);
+                Assert.AreEqual(29, _testResult);
             }
 
             [TestCase]
@@ -52,7 +52,7 @@ namespace UnitTests
             {
                 _testResult = MethodLibrary.StringCalculator.Add("1\n2,3");
 
-                Assert.AreEqual(_testResult, 6);
+                Assert.AreEqual(6, _testResult);
             }
 
             [TestCase]
@@ -60,7 +60,7 @@ namespace UnitTests
             {
                 _testResult = MethodLibrary.StringCalculator.Add("1,\n");
 
-                Assert.AreEqual(_testResult, 1);
+                Assert.AreEqual(1, _testResult);
             }
 
             [TestCase]
@@ -68,7 +68,7 @@ namespace UnitTests
             {
                 _testResult = MethodLibrary.StringCalculator.Add("//;\n1;2");
 
-                Assert.AreEqual(_testResult, 3);
+                Assert.AreEqual(3, _testResult);
             }
 
             [TestCase]
@@ -80,7 +80,7 @@ namespace UnitTests
                 }
                 catch (System.Exception e)
                 {
-                    Assert.AreEqual(e.Message, "Negatives not allowed -2");
+                    Assert.AreEqual("Negatives not allowed -2", e.Message);
                 }
             }
         }
