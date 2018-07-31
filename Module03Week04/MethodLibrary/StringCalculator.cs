@@ -81,7 +81,7 @@ namespace MethodLibrary
                     stringBuilder.Append(" ");
                     stringBuilder.Append(number.ToString());
                 }
-                throw new Exception(stringBuilder.ToString());
+                throw new InvalidOperationException(stringBuilder.ToString());
             }
             else
             {

@@ -78,7 +78,7 @@ namespace UnitTests
                 {
                     _testResult = MethodLibrary.StringCalculator.Add("//;\n1;-2");
                 }
-                catch (Exception e)
+                catch (InvalidOperationException e)
                 {
                     Assert.AreEqual("Negatives not allowed -2", e.Message);
                 }
