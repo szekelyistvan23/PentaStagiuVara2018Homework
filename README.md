@@ -2,7 +2,7 @@
 
 This is an about 12 weeks course, held by Pentalog Brasov, they guided us through 3 modules: starting with best practices of C# and extending it by developing a web application.
 
-##Module01Week01
+## Module01Week01
 
 • Create a “guess the number” game
 • You must generate a random number between 0 and 100 (the target number)
@@ -14,7 +14,7 @@ was too small
 was too big
 • Allow the user to guess again until he guesses correctly
 
-##Module01Week02
+## Module01Week02
 
 1. Read from the console 3 integers representing the year, month and day of
 a person and a letter (M/F) representing the gender of the person
@@ -28,7 +28,7 @@ he/she will retire (Female at 63, Male at 65)
 2. Choose 7 methods from the string build-in functionalities and create some
 examples with them
 
-##Module01Week03
+## Module01Week03
 
 Create the classes from the following requirements:
 • Create an application that allows users to post messages on a common board.
@@ -41,7 +41,7 @@ Notes:
 • No implementation for methods, we will continue next week with that
 • Create 2 projects in the same solution: a class library and a console app
 
-##Module01Week04
+## Module01Week04
 
 Create an console app from the following requirements:
 • Create an application that allows users to post messages on a common board.
@@ -55,7 +55,7 @@ Notes:
 • Create 2 projects in the same solution: a class library and a console app
 • Sort
 
-##Module01Week05
+## Module01Week05
 
 •Extend the homework you did last week
 •In the message board, implement an indexer that allows us to get the posts
@@ -67,7 +67,7 @@ event.
 • The console app should write a message to the console each time a post is
 added to the board.
 
-##Module02Week01
+## Module02Week01
 
 •Load list of names from file with name people.txt.
 •Add remove one of the name and add 2 new names to the list.
@@ -77,12 +77,12 @@ create missing file.
 •If one of the name is invalid then display message and don’t add name to the
 list. Valid names contains only letters.
 
-##Module02Week03
+## Module02Week03
 
 • Display all the persons borne between 1985 and 1995, ordered by the number of vowels from their full name.
 • Make a list of User objects from a list of People objects, where username is equals to $"{FirstName}{LastName}{BirthDate.ToString("yy")}".
 
-##Module03Week01
+## Module03Week01
 
 • Create a new ASP.NET MVC 5 application with UserAuthentication
 • In the new app, add your entity (Post/Message) in the models folder
@@ -96,7 +96,7 @@ The Post class should have: Id (int), UserId(int), TimeOfPosting(DateTime), Mess
 		-If the post Message is null or empty return 404
 		-If the post Message is not null or empty return the Details view with the 		post object as a parameter
 
-##Module03Week02
+## Module03Week02
 
 • Add the following actions to the Controller:
 	-Edit Action (Both the [HttpGet] and [HttpPost] actions – you can add other field 	validations if you want)
@@ -105,14 +105,14 @@ The Post class should have: Id (int), UserId(int), TimeOfPosting(DateTime), Mess
 • Create a partial view containing the instructions for creating a post (a text explaining that the post must be no longer than 255 characters, etc) and include it in the Create and in the Edit views.
 • Modify the layout page: in the menubar add an URL to the Index action from your controller. Also in the layout add your name in the footer section of the application.
 
-##Module03Week03
+## Module03Week03
 
 • Create a Category model and generate a controller for it.
 • Modify the create POST action to set the current user on the Post object when creating one (before adding it to the database, make sure you have in the Post class, the string ApplicationUserId, and the virtual ApplicationUser properties, to let EntityFramework know that you want the post to be linked with the ApplicationUser class). Add also the link with Category. Then generate the controller.
 • Add the [Authorize] and [AllowAnonymous] accordingly on the controllers. Add links to your pages on the application menu bar.
 • Optional: Be creative :) use Bootstrap to make your pages more attractive.
 
-##Module03Week04
+## Module03Week04
 
 • Create a simple String calculator with a method int Add(string numbers)
 
